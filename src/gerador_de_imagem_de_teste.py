@@ -1,9 +1,9 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-def generate_sample_jpg():
+def generate_sample_jpeg():
     os.makedirs("images", exist_ok=True)
-    image_path = os.path.join("images", "lista-material-escolar.jpg")
+    image_path = os.path.join("images", "lista-material-escolar.jpeg")
     
     # Criar uma imagem branca
     width, height = 800, 1000
@@ -50,4 +50,4 @@ def generate_sample_jpg():
     print(f"Imagem criada com sucesso em: {image_path}")
 
 if __name__ == "__main__":
-    generate_sample_jpg()
+    generate_sample_jpeg()

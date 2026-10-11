@@ -21,12 +21,12 @@ O projeto foi estruturado seguindo boas práticas de desenvolvimento de software
 aws-textract-image-ocr/
 │
 ├── images/
-│   └── lista-material-escolar.jpg   # Imagem de teste gerada/utilizada
+│   └── lista-material-escolar.jpeg  # Imagem de teste gerada/utilizada
 ├── src/
 │   ├── __init__.py
-│   └── extractor.py                 # Módulo de integração com AWS Textract
+│   ├── extractor.py                 # Módulo de integração com AWS Textract
+│   └── gerador_de_imagem_de_teste.py # Gera uma imagem de teste
 ├── .gitignore                       # Ficheiros ignorados pelo Git
-├── generate_sample_image.py          # Script utilitário para gerar a imagem de teste
 ├── LICENSE                          # Licença MIT do projeto
 ├── main.py                          # Ponto de entrada CLI da aplicação
 └── requirements.txt                 # Dependências do projeto
@@ -101,14 +101,14 @@ pip install -r requirements.txt
 
 ---
 
-### 5. Gerar a Imagem de Teste (`.jpg`)
+### 5. Gerar a Imagem de Teste (`.jpeg`)
 
-Se não tiver a imagem `lista-material-escolar.jpg` na pasta `images/`, pode executá-lo para gerar a imagem de exemplo automaticamente:
+Se não tiver a imagem `lista-material-escolar.jpeg` na pasta `images/`, pode gerar uma imagem de exemplo com:
 
 ```bash
-python generate_sample_image.py
+python -m src.gerador_de_imagem_de_teste
 ```
-Este script cria o ficheiro `images/lista-material-escolar.jpg` contendo a lista visualizada na demonstração.
+Este comando cria o ficheiro `images/lista-material-escolar.jpeg` contendo a lista visualizada na demonstração.
 
 ---
 
@@ -124,7 +124,7 @@ python main.py
 Pode especificar uma imagem ou região AWS diferente através de argumentos:
 
 ```bash
-python main.py --image images/lista-material-escolar.jpg --region us-east-1
+python main.py --image images/lista-material-escolar.jpeg --region us-east-1
 ```
 
 ---
@@ -134,7 +134,7 @@ python main.py --image images/lista-material-escolar.jpg --region us-east-1
 Ao executar a aplicação, o resultado impresso no terminal será semelhante ao seguinte:
 
 ```text
-Processando imagem: images/lista-material-escolar.jpg...
+Processando imagem: images/lista-material-escolar.jpeg...
 
 ==================== TEXTO EXTRAÍDO ====================
 . Lista de Material Escolar

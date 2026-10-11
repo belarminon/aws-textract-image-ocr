@@ -10,7 +10,7 @@ def main():
     parser.add_argument(
         "--image",
         type=str,
-        default=os.path.join("images", "lista-material-escolar.jpg"),
+        default=os.path.join(os.path.dirname(__file__), "images", "lista-material-escolar.jpeg"),
         help="Caminho para o ficheiro de imagem"
     )
     parser.add_argument(
